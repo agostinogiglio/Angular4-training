@@ -1,0 +1,26 @@
+<h1>Assignment 3</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ol>
+        <li>Add A button which says 'Display Details'</li>
+        <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>
+        <li>Toggle the displaying of that paragraph with the button created in the first step</li>
+        <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply
+          an incrementing number)</li>
+        <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<h1>Solution</h1>
+<br/>
+
+<button type="button" class="btn btn-primary" (click)="onTogglePasswordDisplay()">Display Details</button>
+<p *ngIf="showPassword" class="inline-style">Secret Password = {{password}} </p>
+
+<h3>Click log:</h3>
+<div *ngFor="let elem of clickArray; let i = index">
+  <div [ngStyle]="{backgroundColor: i>=4? 'blue':'transparent'}" [ngClass]="{'white-text': i>=4}">{{elem}}</div>
+</div>

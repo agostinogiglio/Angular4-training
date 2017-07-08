@@ -1,0 +1,9 @@
+
+section{
+    border: 1px solid orange;
+    padding: 20px;
+    box-shadow: 10px 10px 5px darkorange;
+
+    width: 50%;
+    margin: 0 auto;
+}
